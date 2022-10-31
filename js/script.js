@@ -2,13 +2,16 @@ let passarinho = document.getElementById("passarinho");
 let barreira1 = document.getElementById("barreira1");
 let barreira2 = document.getElementById("barreira2");
 let jumping = 0;
+let score = 0;
 
 function jump() {
     jumping = 1;
     let count = 0;
     let jumpInterval = setInterval(function () {
         let passarinhoTop = parseInt(window.getComputedStyle(passarinho).getPropertyValue("top"));
-        if ((passarinhoTop > 6) && (count < 15)) { passarinho.style.top = (passarinhoTop - 5) + "px"; }
+        if ((passarinhoTop > 6) && (count < 15)) { 
+            passarinho.style.top = (passarinhoTop - 5) + "px"; 
+        }
 
         if (count > 20) {
             clearInterval(jumpInterval);
@@ -21,8 +24,12 @@ function jump() {
 
 setInterval(function () {
     let passarinhoTop = parseInt(window.getComputedStyle(passarinho).getPropertyValue("top"));
-    if (jumping === 0) { passarinho.style.top = (passarinhoTop + 3) + "px"; }
-    if (passarinhoTop > 600) { alert("Game over.") }
+    if (jumping === 0) { passarinho.style.top = (passarinhoTop + 4) + "px"; }
+    if (passarinhoTop > 600) { 
+        alert("Game over. Score: " + score);
+        passarinho.style.top = 100+"px";
+        score = 0;
+    }
 }, 10);
 
 document.addEventListener("keydown", event => {
