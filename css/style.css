@@ -18,9 +18,8 @@
   background-image: url(../images/passarinho.png);
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 400px;
+  top: 100px;
   left: 150px;
-  animation: gravity 5s infinite linear;
 }
 
 #barreira1 {
@@ -28,8 +27,8 @@
   height: 200px;
   background-image: url(../images/cano-cima.png);
   position: relative;
-  top: 0px;
-  animation: slide 3s infinite linear;
+  top: 0;
+  animation: slide 5s infinite linear;
 }
 
 #barreira2 {
@@ -38,23 +37,14 @@
   background-image: url(../images/cano-baixo.png);
   position: relative;
   bottom: -225px;
-  animation: slide 3s infinite linear;
+  animation: slide 5s infinite linear;
 }
 
 @keyframes slide {
   0% {
-    right: -950px;
+    right: -1000px;
   }
   100% {
     right: 100px;
-  }
-}
-
-@keyframes gravity {
-  0% {
-    bottom: 500px;
-  }
-  100% {
-    bottom: 0px;
   }
 }
