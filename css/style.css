@@ -18,9 +18,9 @@
   background-image: url(../images/passarinho.png);
   background-repeat: no-repeat;
   position: absolute;
-  top: 300px;
+  bottom: 400px;
   left: 150px;
-  animation: gravity 3s infinite linear;
+  animation: gravity 1s infinite linear;
 }
 
 #barreira1 {
@@ -52,9 +52,9 @@
 
 @keyframes gravity {
   0% {
-    top: top;
+    bottom: 500px;
   }
   100% {
-    top: +500px;
+    bottom: 0px;
   }
 }
