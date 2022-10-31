@@ -19,8 +19,6 @@ document.addEventListener("keydown", event => {
     if (event.key === "ArrowUp") {
         moveUp();
     }
-
-
-
+    
 });
 

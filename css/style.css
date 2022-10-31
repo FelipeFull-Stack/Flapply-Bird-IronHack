@@ -20,7 +20,7 @@
   position: absolute;
   bottom: 400px;
   left: 150px;
-  animation: gravity 1s infinite linear;
+  animation: gravity 5s infinite linear;
 }
 
 #barreira1 {
