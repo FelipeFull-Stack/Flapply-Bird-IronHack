@@ -56,6 +56,11 @@ document.addEventListener("keydown", event => {
 // // Esse valor é apenas o tanto X que ele vai subir
 // passarinho.style.top = top + "px";
 function HeightUpBar() {
+    if (contador === 7) {
+        console.log(contador);
+        contador = 0;
+    }
+
     if (contador === 0) {
         let random = -((Math.random() * 100) + 200);
         imgBarreira1.style.height = random + "px";
@@ -84,6 +89,10 @@ function HeightUpBar() {
 
 
 function HeightDownBar() {
+    if (contador === 7) {
+        console.log(contador);
+        contador = 0;
+    }
 
     if (contador === 1) {
         let random = +((Math.random() * 100) + 200);
@@ -113,3 +122,7 @@ function HeightDownBar() {
 
 imgBarreira1.addEventListener("animationiteration", () => HeightUpBar());
 imgBarreira2.addEventListener("animationiteration", () => HeightDownBar());
+if (contador === 7) {
+    console.log(contador);
+    contador = 0;
+}
