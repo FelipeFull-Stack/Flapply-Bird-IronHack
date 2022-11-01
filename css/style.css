@@ -10,6 +10,9 @@
   border: 1px solid red;
   box-sizing: border-box;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #passarinho {
@@ -23,22 +26,37 @@
 }
 
 #barreira1 {
+  display: flex;
+  align-items: flex-start;
+  width: 110px;
+  height: 300px;
+  position: relative;
+  top: -20px;
+  border: 1px solid black;
+  animation: slide 5s infinite linear;
+}
+#barreira1 > img {
   width: 110px;
   height: 200px;
-  background-image: url(../images/cano-cima.png);
-  position: relative;
-  top: 0;
   animation: slide 5s infinite linear;
 }
 
 #barreira2 {
+  display: flex;
+  align-items: flex-end;
   width: 110px;
-  height: 200px;
-  background-image: url(../images/cano-baixo.png);
+  height: 300px;
   position: relative;
-  bottom: -225px;
+  bottom: -20px;
+  border: 1px solid black;
   animation: slide 5s infinite linear;
 }
+#barreira2 > img {
+  width: 110px;
+  height: 200px;
+  animation: slide 5s infinite linear;
+}
+
 
 @keyframes slide {
   0% {
