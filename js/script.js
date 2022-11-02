@@ -6,10 +6,7 @@ let imgBarreira2 = document.getElementById("imgBarreira2");
 let jumping = 0;
 let score = 0;
 let contador = 0;
-if (contador === 15) {
-    console.log(contador);
-    contador = 0;
-}
+
 
 function colisao(){
 
@@ -60,10 +57,6 @@ document.addEventListener("keydown", event => {
 // // Esse valor é apenas o tanto X que ele vai subir
 // passarinho.style.top = top + "px";
 function HeightUpBar() {
-    if (contador === 15) {
-        console.log(contador);
-        contador = 0;
-    }
 
     if (contador === 0) {
         let random = 100;
@@ -72,13 +65,13 @@ function HeightUpBar() {
         return contador++;
     }
     if (contador === 2) {
-        let random = 150;
+        let random = 300;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 4) {
-        let random = 200;
+        let random = 150;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
@@ -90,19 +83,19 @@ function HeightUpBar() {
         return contador++;
     }
     if (contador === 8) {
-        let random = 200;
+        let random = 225;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 10) {
-        let random = 150;
+        let random = 350;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 12) {
-        let random = 400;
+        let random = 100;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
@@ -113,29 +106,47 @@ function HeightUpBar() {
         console.log(contador);
         return contador++;
     }
+    if (contador === 16) {
+        let random = 250;
+        imgBarreira1.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 18) {
+        let random = 325;
+        imgBarreira1.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 20) {
+        let random = 100;
+        imgBarreira1.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
 }
 
 
 function HeightDownBar() {
-    if (contador === 15) {
+    if (contador === 21) {
         console.log(contador);
         contador = 0;
     }
 
     if (contador === 1) {
-        let random = 200;
+        let random = 250;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 3) {
-        let random = 150;
+        let random = 100;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 5) {
-        let random = 100;
+        let random = 300;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
@@ -147,25 +158,43 @@ function HeightDownBar() {
         return contador++;
     }
     if (contador === 9) {
-        let random = 200;
+        let random = 225;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 11) {
-        let random = 250;
+        let random = 100;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 13) {
-        let random = 100;
+        let random = 350;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 15) {
-        let random = 100;
+        let random = 150;
+        imgBarreira2.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 17) {
+        let random = 250;
+        imgBarreira2.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 19) {
+        let random = 125;
+        imgBarreira2.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 21) {
+        let random = 375;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
