@@ -6,10 +6,13 @@ let imgBarreira2 = document.getElementById("imgBarreira2");
 let jumping = 0;
 let score = 0;
 let contador = 0;
-
-if (contador === 7) {
+if (contador === 15) {
     console.log(contador);
     contador = 0;
+}
+
+function colisao(){
+
 }
 
 
@@ -38,6 +41,7 @@ setInterval(function () {
         alert("Game over. Score: " + score);
         passarinho.style.top = 100 + "px";
         score = 0;
+        contador === 0;
     }
 }, 10);
 
@@ -56,31 +60,55 @@ document.addEventListener("keydown", event => {
 // // Esse valor é apenas o tanto X que ele vai subir
 // passarinho.style.top = top + "px";
 function HeightUpBar() {
-    if (contador === 7) {
+    if (contador === 15) {
         console.log(contador);
         contador = 0;
     }
 
     if (contador === 0) {
-        let random = -((Math.random() * 100) + 200);
+        let random = 100;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 2) {
-        let random = +((Math.random() * 100) + 200);
+        let random = 150;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 4) {
-        let random = -((Math.random() * 100) + 200);
+        let random = 200;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 6) {
-        let random = +((Math.random() * 100) + 200);
+        let random = 300;
+        imgBarreira1.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 8) {
+        let random = 200;
+        imgBarreira1.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 10) {
+        let random = 150;
+        imgBarreira1.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 12) {
+        let random = 400;
+        imgBarreira1.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 14) {
+        let random = 300;
         imgBarreira1.style.height = random + "px";
         console.log(contador);
         return contador++;
@@ -89,40 +117,65 @@ function HeightUpBar() {
 
 
 function HeightDownBar() {
-    if (contador === 7) {
+    if (contador === 15) {
         console.log(contador);
         contador = 0;
     }
 
     if (contador === 1) {
-        let random = +((Math.random() * 100) + 200);
+        let random = 200;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 3) {
-        let random = -((Math.random() * 100) + 200);
+        let random = 150;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 5) {
-        let random = +((Math.random() * 100) + 200);
+        let random = 100;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
     if (contador === 7) {
-        let random = -((Math.random() * 100) + 200);
+        let random = 100;
+        imgBarreira2.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 9) {
+        let random = 200;
+        imgBarreira2.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 11) {
+        let random = 250;
+        imgBarreira2.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 13) {
+        let random = 100;
+        imgBarreira2.style.height = random + "px";
+        console.log(contador);
+        return contador++;
+    }
+    if (contador === 15) {
+        let random = 100;
         imgBarreira2.style.height = random + "px";
         console.log(contador);
         return contador++;
     }
 }
 
-imgBarreira1.addEventListener("animationiteration", () => HeightUpBar());
+imgBarreira1.addEventListener("animationiteration", () => {
+    HeightUpBar();
+    score++;
+});
 imgBarreira2.addEventListener("animationiteration", () => HeightDownBar());
-if (contador === 7) {
-    console.log(contador);
-    contador = 0;
-}
+
+console.log(imgBarreira1);
