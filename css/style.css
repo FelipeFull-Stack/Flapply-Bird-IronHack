@@ -4,15 +4,18 @@
 }
 
 #tela {
-  margin: 1%;
+  margin: 0.1%;
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   width: 1000px;
-  height: 625px;
-  border: 1px solid red;
+  height: 655px;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  border: 1px solid red;
 }
 
 #passarinho {
@@ -29,15 +32,13 @@
   display: flex;
   align-items: flex-start;
   width: 110px;
-  height: 300px;
+  height: 50%;
   position: relative;
-  top: -20px;
-  border: 1px solid black;
   animation: slide 3s infinite linear;
 }
 #barreira1 > img {
   width: 110px;
-  height: 100px;
+  height: 150px;
   animation: slide 3s infinite linear;
 }
 
@@ -45,15 +46,13 @@
   display: flex;
   align-items: flex-end;
   width: 110px;
-  height: 300px;
+  height: 50%;
   position: relative;
-  bottom: -20px;
-  border: 1px solid black;
   animation: slide 3s infinite linear;
 }
 #barreira2 > img {
   width: 110px;
-  height: 100px;
+  height: 150px;
   animation: slide 3s infinite linear;
 }
 

@@ -5,10 +5,23 @@ let imgBarreira1 = document.getElementById("imgBarreira1");
 let imgBarreira2 = document.getElementById("imgBarreira2");
 let jumping = 0;
 let score = 0;
-let contador = 0;
+let aleatorio = 0;
+let oscilador1 = 200, oscilador2 = 200;
+let contador = Math.floor(Math.random(1) * 2);
 
 
-function colisao(){
+function colisao() {
+    let colisaoBarreira1 = parseInt(window.getComputedStyle(barreira1).getPropertyValue("left"));
+    let colisaoBarreira2 = parseInt(window.getComputedStyle(barreira2).getPropertyValue("left"));
+    let colisaoPassarinho = parseInt(window.getComputedStyle(passarinho).getPropertyValue("right"));
+    console.log(colisaoBarreira1);
+    console.log(colisaoBarreira2);
+    console.log(colisaoPassarinho);
+    if ((colisaoBarreira1 === colisaoPassarinho) || (colisaoBarreira2 === colisaoPassarinho)) {
+        alert("Perdeu: Bateu no muro!  Score: " + score);
+        passarinho.style.top = 100 + "px";
+        score = 0;
+    }
 
 }
 
@@ -19,9 +32,8 @@ function jump() {
     let jumpInterval = setInterval(function () {
         let passarinhoTop = parseInt(window.getComputedStyle(passarinho).getPropertyValue("top"));
         if ((passarinhoTop > 6) && (count < 15)) {
-            passarinho.style.top = (passarinhoTop - 5) + "px";
+            passarinho.style.top = (passarinhoTop - 6) + "px";
         }
-
         if (count > 20) {
             clearInterval(jumpInterval);
             jumping = 0;
@@ -34,177 +46,69 @@ function jump() {
 setInterval(function () {
     let passarinhoTop = parseInt(window.getComputedStyle(passarinho).getPropertyValue("top"));
     if (jumping === 0) { passarinho.style.top = (passarinhoTop + 3) + "px"; }
-    if (passarinhoTop > 600) {
-        alert("Game over. Score: " + score);
+    if (passarinhoTop > 610) {
+        alert("Perdeu: Não soube voar!\nScore: " + score);
         passarinho.style.top = 100 + "px";
         score = 0;
-        contador === 0;
     }
 }, 10);
 
 document.addEventListener("keydown", event => {
-    if (event.key !== "Enter") {
-        jump();
-    }
-
-
+    jump();
 });
-
 
 
 // let top = parseInt(window.getComputedStyle(passarinho).getPropertyValue("top"));
-// top -= 25;
+// top -= 25;|| (passarinho.style.right === imgBarreira1.style.left) || (passarinho.style.right === imgBarreira2.style.left)
 // // Esse valor é apenas o tanto X que ele vai subir
 // passarinho.style.top = top + "px";
 function HeightUpBar() {
-
     if (contador === 0) {
-        let random = 100;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
+        oscilador1 += aleatorio;
+        imgBarreira1.style.height = oscilador1 + "px";
     }
-    if (contador === 2) {
-        let random = 300;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 4) {
-        let random = 150;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 6) {
-        let random = 300;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 8) {
-        let random = 225;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 10) {
-        let random = 350;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 12) {
-        let random = 100;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 14) {
-        let random = 300;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 16) {
-        let random = 250;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 18) {
-        let random = 325;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 20) {
-        let random = 100;
-        imgBarreira1.style.height = random + "px";
-        console.log(contador);
-        return contador++;
+    if (contador === 1) {
+        if (aleatorio > 150) {
+            oscilador1 = oscilador1 - (aleatorio - 50);
+            imgBarreira1.style.height = oscilador1 + "px";
+        }
+        if (aleatorio < 150) {
+            oscilador1 = oscilador1 - (aleatorio + 50);
+            imgBarreira1.style.height = oscilador1 + "px";
+        }
     }
 }
-
 
 function HeightDownBar() {
-    if (contador === 21) {
-        console.log(contador);
-        contador = 0;
+    if (contador === 0) {
+        if (aleatorio > 150) {
+            oscilador2 = oscilador2 - (aleatorio - 50);
+            imgBarreira2.style.height = oscilador2 + "px";
+        }
+        if (aleatorio < 150) {
+            oscilador2 = oscilador2 - (aleatorio + 50);
+            imgBarreira2.style.height = oscilador2 + "px";
+        }
+    }
+    if (contador === 1) {
+        oscilador2 += aleatorio;
+        imgBarreira2.style.height = oscilador2 + "px";
     }
 
-    if (contador === 1) {
-        let random = 250;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 3) {
-        let random = 100;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 5) {
-        let random = 300;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 7) {
-        let random = 100;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 9) {
-        let random = 225;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 11) {
-        let random = 100;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 13) {
-        let random = 350;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 15) {
-        let random = 150;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 17) {
-        let random = 250;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 19) {
-        let random = 125;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
-    if (contador === 21) {
-        let random = 375;
-        imgBarreira2.style.height = random + "px";
-        console.log(contador);
-        return contador++;
-    }
+    contador = Math.floor(Math.random(1) * 2);
+    aleatorio = (Math.floor(Math.random(1) * 2) + 1) * 100;
+    oscilador1 = 200;
+    oscilador2 = 200;
 }
 
+passarinho.addEventListener("animationiteration", () => colisao());
+
 imgBarreira1.addEventListener("animationiteration", () => {
+    colisao();
     HeightUpBar();
     score++;
 });
-imgBarreira2.addEventListener("animationiteration", () => HeightDownBar());
-
-console.log(imgBarreira1);
+imgBarreira2.addEventListener("animationiteration", () => {
+    colisao();
+    HeightDownBar();
+});
