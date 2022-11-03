@@ -33,12 +33,12 @@
   width: 110px;
   height: 50%;
   position: relative;
-  animation: slide 3s infinite linear;
+  animation: slide 1.5s infinite linear;
 }
 #barreira1 > img {
   width: 110px;
   height: 150px;
-  animation: slide 3s infinite linear;
+  animation: slide 1.5s infinite linear;
 }
 
 #barreira2 {
@@ -47,12 +47,12 @@
   width: 110px;
   height: 50%;
   position: relative;
-  animation: slide 3s infinite linear;
+  animation: slide 1.5s infinite linear;
 }
 #barreira2 > img {
   width: 110px;
   height: 150px;
-  animation: slide 3s infinite linear;
+  animation: slide 1.5s infinite linear;
 }
 
 @keyframes slide {
