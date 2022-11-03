@@ -59,12 +59,6 @@ document.addEventListener("keydown", event => {
     jump();
 });
 
-
-// let top = parseInt(window.getComputedStyle(passarinho).getPropertyValue("top"));
-// top -= 25;|| (passarinho.style.right === imgBarreira1.style.left) || (passarinho.style.right === imgBarreira2.style.left)
-// // Esse valor é apenas o tanto X que ele vai subir
-// passarinho.style.top = top + "px";
-
 function HeightUpBar() {
     if (contador === 0) {
         oscilador1 += aleatorio;
