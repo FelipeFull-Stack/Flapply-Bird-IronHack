@@ -48,9 +48,9 @@ setInterval(function () {
     console.log(`solisaoBarreira1: ${colisaoBarreira1}`);
     console.log(`solisaoBarreira1: ${colisaoBarreira2}`);
 
-    if (passarinhoTop >= 655 - aleatorio || passarinhoTop <= aleatorio) {
+    if (passarinhoTop >= 645 - aleatorio || passarinhoTop <= aleatorio) {
 
-        if ((colisaoPassarinho  <= colisaoBarreira1 + 120 && colisaoPassarinho >= colisaoBarreira1) || (colisaoPassarinho <=  colisaoBarreira2 + 120 && colisaoPassarinho >= colisaoBarreira2)) {
+        if ((colisaoPassarinho <= colisaoBarreira1 + 120 && colisaoPassarinho >= colisaoBarreira1) || (colisaoPassarinho <= colisaoBarreira2 + 120 && colisaoPassarinho >= colisaoBarreira2)) {
             alert("Perdeu: Bateu no muro!  Score: " + score);
             passarinho.style.top = 100 + "px";
             score = 0;
