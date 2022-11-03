@@ -8,7 +8,7 @@ let score = 0;
 let aleatorio = (Math.floor(Math.random(1) * 2) + 1) * 100;
 let oscilador1 = 200, oscilador2 = 200;
 let contador = Math.floor(Math.random(1) * 2);
-
+let x = 200, y = 200;
 
 
 
@@ -31,6 +31,7 @@ function jump() {
 
 setInterval(function () {
     let passarinhoTop = parseInt(window.getComputedStyle(passarinho).getPropertyValue("top"));
+    let passarinhoBottom = parseInt(window.getComputedStyle(passarinho).getPropertyValue("bottom"))
     if (jumping === 0) {
         passarinho.style.top = (passarinhoTop + 3) + "px";
     }
@@ -44,11 +45,7 @@ setInterval(function () {
     let colisaoBarreira2 = parseInt(window.getComputedStyle(imgBarreira2).getPropertyValue("right"));
     let colisaoPassarinho = parseInt(window.getComputedStyle(passarinho).getPropertyValue("right"));
 
-    console.log(`ColisaoPassarinho: ${colisaoPassarinho}`)
-    console.log(`solisaoBarreira1: ${colisaoBarreira1}`);
-    console.log(`solisaoBarreira1: ${colisaoBarreira2}`);
-
-    if (passarinhoTop >= 645 - aleatorio || passarinhoTop <= aleatorio) {
+    if (passarinhoTop <= x || passarinhoBottom <= y) {
 
         if ((colisaoPassarinho <= colisaoBarreira1 + 120 && colisaoPassarinho >= colisaoBarreira1) || (colisaoPassarinho <= colisaoBarreira2 + 120 && colisaoPassarinho >= colisaoBarreira2)) {
             alert("Perdeu: Bateu no muro!  Score: " + score);
@@ -56,8 +53,6 @@ setInterval(function () {
             score = 0;
         }
     }
-
-
 }, 10);
 
 document.addEventListener("keydown", event => {
@@ -102,6 +97,8 @@ function HeightDownBar() {
         oscilador2 += aleatorio;
         imgBarreira2.style.height = oscilador2 + "px";
     }
+    x=oscilador1;
+    y=oscilador2;
 
     contador = Math.floor(Math.random(1) * 2);
     aleatorio = (Math.floor(Math.random(1) * 2) + 1) * 100;
