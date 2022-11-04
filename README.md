@@ -9,3 +9,6 @@ Apresentação: (https://docs.google.com/presentation/d/1Ll_9kNQDTod5rWe6ewpCsrf
 
 url-game: (https://felipefull-stack.github.io/Flapply-Bird-IronHack/)
 by: Luiz Felipe Soares Lopes - Student Full-stack Web Development
+
+
+![O Jogo](https://user-images.githubusercontent.com/106980470/199857413-c67d9797-6c96-4af1-9770-92b7fa24d30f.png)
